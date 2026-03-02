@@ -1,0 +1,21 @@
+name: resumejson
+description: >-
+  Reference Dart type library for the ResumeJSON structured resume format.
+  Immutable data classes with JSON-LD serialization. Zero external dependencies.
+version: 0.1.0
+repository: https://github.com/dancingskylab/resumejson
+homepage: https://github.com/dancingskylab/resumejson/tree/main/dart
+issue_tracker: https://github.com/dancingskylab/resumejson/issues
+topics:
+  - json
+  - resume
+  - json-ld
+  - serialization
+  - schema
+
+environment:
+  sdk: ^3.11.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6

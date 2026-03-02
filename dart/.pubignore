@@ -1,0 +1,5 @@
+# Exclude non-essential files from published package
+coverage/
+doc/
+.dart_tool/
+.agent/

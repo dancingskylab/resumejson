@@ -1,0 +1,23 @@
+# Strict static analysis for pub.dev quality.
+
+include: package:lints/recommended.yaml
+
+linter:
+  rules:
+    # Documentation
+    - public_member_api_docs
+
+    # Style
+    - sort_constructors_first
+    - prefer_single_quotes
+    - always_declare_return_types
+    - directives_ordering
+    - prefer_final_locals
+    - unnecessary_lambdas
+
+    # Safety
+    - unawaited_futures
+    - cancel_subscriptions
+    - close_sinks
+    - avoid_slow_async_io
+    - prefer_void_to_null
