@@ -1,0 +1,42 @@
+{
+    "@context": {
+        "@vocab": "https://schema.org/",
+        "resumejson": "https://auth.careers/schema/"
+    },
+    "@type": "CreativeWork",
+    "additionalType": "resumejson:StructuredResume",
+    "about": {
+        "@type": "Person",
+        "givenName": "Jane",
+        "familyName": "Doe",
+        "name": "Jane Doe",
+        "jobTitle": "Software Engineer"
+    },
+    "resumejson:contactPoints": [
+        {
+            "@type": "ContactPoint",
+            "contactType": "email",
+            "email": "jane.doe@example.com"
+        }
+    ],
+    "resumejson:workExperience": [
+        {
+            "@type": "OrganizationRole",
+            "roleName": "Senior Software Engineer",
+            "startDate": "2021-03",
+            "memberOf": {
+                "@type": "Organization",
+                "name": "Acme Corp",
+                "url": "https://acme.example.com"
+            },
+            "resumejson:responsibilities": [
+                "Designed and built distributed services handling 50 k req/s"
+            ],
+            "keywords": [
+                "Go",
+                "Kubernetes",
+                "gRPC"
+            ]
+        }
+    ]
+}

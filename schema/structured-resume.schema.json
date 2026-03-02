@@ -1,0 +1,127 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/structured-resume.schema.json",
+    "title": "StructuredResume",
+    "description": "Root document — the complete structured resume. Maps to Schema.org CreativeWork with additionalType resumejson:StructuredResume.",
+    "$comment": "/// Required: [@context], [@type], [additionalType], [about]. Optional: [workExperience], [education], [skills], [certifications], [projects], [volunteering], [awards], [languages], [publications].",
+    "type": "object",
+    "properties": {
+        "@context": {
+            "type": "object",
+            "properties": {
+                "@vocab": {
+                    "const": "https://schema.org/"
+                },
+                "resumejson": {
+                    "const": "https://auth.careers/schema/"
+                }
+            },
+            "required": [
+                "@vocab",
+                "resumejson"
+            ]
+        },
+        "@type": {
+            "const": "CreativeWork"
+        },
+        "additionalType": {
+            "const": "resumejson:StructuredResume"
+        },
+        "about": {
+            "$ref": "person-identity.schema.json"
+        },
+        "resumejson:address": {
+            "oneOf": [
+                {
+                    "$ref": "postal-address.schema.json"
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "resumejson:contactPoints": {
+            "type": "array",
+            "items": {
+                "$ref": "contact-point.schema.json"
+            },
+            "default": []
+        },
+        "resumejson:socialProfiles": {
+            "type": "array",
+            "items": {
+                "$ref": "social-profile.schema.json"
+            },
+            "default": []
+        },
+        "resumejson:workExperience": {
+            "type": "array",
+            "items": {
+                "$ref": "work-experience.schema.json"
+            },
+            "default": []
+        },
+        "resumejson:education": {
+            "type": "array",
+            "items": {
+                "$ref": "education.schema.json"
+            },
+            "default": []
+        },
+        "resumejson:skills": {
+            "type": "array",
+            "items": {
+                "$ref": "skill.schema.json"
+            },
+            "default": []
+        },
+        "resumejson:certifications": {
+            "type": "array",
+            "items": {
+                "$ref": "certification.schema.json"
+            },
+            "default": []
+        },
+        "resumejson:projects": {
+            "type": "array",
+            "items": {
+                "$ref": "project.schema.json"
+            },
+            "default": []
+        },
+        "resumejson:volunteering": {
+            "type": "array",
+            "items": {
+                "$ref": "volunteering.schema.json"
+            },
+            "default": []
+        },
+        "resumejson:awards": {
+            "type": "array",
+            "items": {
+                "$ref": "award.schema.json"
+            },
+            "default": []
+        },
+        "resumejson:languages": {
+            "type": "array",
+            "items": {
+                "$ref": "language-proficiency.schema.json"
+            },
+            "default": []
+        },
+        "resumejson:publications": {
+            "type": "array",
+            "items": {
+                "$ref": "publication.schema.json"
+            },
+            "default": []
+        }
+    },
+    "required": [
+        "@context",
+        "@type",
+        "additionalType",
+        "about"
+    ]
+}

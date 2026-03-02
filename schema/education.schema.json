@@ -1,0 +1,145 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/education.schema.json",
+    "title": "Education",
+    "description": "A single educational credential. Maps to Schema.org EducationalOccupationalCredential.",
+    "$comment": "/// Required: [@type], [credentialCategory], [name], [recognizedBy]. Optional: [about], [resumejson:minor], [resumejson:specialization], [startDate], [dateCreated], [resumejson:expectedGraduation], [resumejson:gpa], [resumejson:honors], [resumejson:relevantCoursework], [resumejson:thesis], [resumejson:activities].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "EducationalOccupationalCredential"
+        },
+        "credentialCategory": {
+            "type": "string",
+            "enum": [
+                "bachelor",
+                "master",
+                "doctorate",
+                "associate",
+                "diploma",
+                "certificate",
+                "high_school",
+                "bootcamp",
+                "professional_degree",
+                "postdoctoral",
+                "other"
+            ]
+        },
+        "name": {
+            "type": "string",
+            "description": "Full degree name."
+        },
+        "about": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Field of study or major."
+        },
+        "resumejson:minor": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resumejson:specialization": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "recognizedBy": {
+            "type": "object",
+            "properties": {
+                "@type": {
+                    "const": "Organization"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                },
+                "location": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "address": {
+                            "$ref": "postal-address.schema.json"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "startDate": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "dateCreated": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Graduation or completion date."
+        },
+        "resumejson:expectedGraduation": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resumejson:gpa": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resumejson:honors": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resumejson:relevantCoursework": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "type": "string"
+            }
+        },
+        "resumejson:thesis": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resumejson:activities": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "@type",
+        "credentialCategory",
+        "name",
+        "recognizedBy"
+    ]
+}

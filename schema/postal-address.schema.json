@@ -1,0 +1,49 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/postal-address.schema.json",
+    "title": "PostalAddress",
+    "description": "Candidate's physical address. Maps to Schema.org PostalAddress.",
+    "$comment": "/// Required: [@type], [addressLocality]. Optional: [streetAddress], [addressRegion], [postalCode], [addressCountry].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "PostalAddress"
+        },
+        "streetAddress": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Street number and name."
+        },
+        "addressLocality": {
+            "type": "string",
+            "description": "City or town name."
+        },
+        "addressRegion": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "State, province, or region."
+        },
+        "postalCode": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "ZIP or postal code."
+        },
+        "addressCountry": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Country name or ISO 3166-1 alpha-2 code."
+        }
+    },
+    "required": [
+        "@type",
+        "addressLocality"
+    ]
+}

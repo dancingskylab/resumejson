@@ -1,0 +1,78 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/project.schema.json",
+    "title": "Project",
+    "description": "A personal, academic, or open-source project. Maps to Schema.org CreativeWork.",
+    "$comment": "/// Required: [@type], [additionalType], [name]. Optional: [url], [resumejson:projectType], [resumejson:role], [startDate], [endDate], [description], [keywords].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "CreativeWork"
+        },
+        "additionalType": {
+            "const": "resumejson:Project"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "url": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uri"
+        },
+        "startDate": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "endDate": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resumejson:projectType": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "personal",
+                "academic",
+                "open_source",
+                "freelance",
+                "hackathon",
+                "research",
+                "other",
+                null
+            ]
+        },
+        "resumejson:role": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "keywords": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": []
+        }
+    },
+    "required": [
+        "@type",
+        "additionalType",
+        "name"
+    ]
+}

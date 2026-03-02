@@ -1,0 +1,131 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/work-experience.schema.json",
+    "title": "WorkExperience",
+    "description": "A single position held at an organization. Maps to Schema.org OrganizationRole.",
+    "$comment": "/// Required: [@type], [roleName], [startDate], [memberOf]. Optional: [endDate], [description], [employmentType], [resumejson:workLocationType], [resumejson:department], [resumejson:responsibilities], [resumejson:achievements], [keywords].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "OrganizationRole"
+        },
+        "roleName": {
+            "type": "string",
+            "description": "Job title as stated on the resume."
+        },
+        "startDate": {
+            "type": "string",
+            "description": "ISO 8601 partial date."
+        },
+        "endDate": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "When the candidate left. Null means Present."
+        },
+        "description": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Free-text role summary."
+        },
+        "memberOf": {
+            "type": "object",
+            "description": "The employer organization.",
+            "properties": {
+                "@type": {
+                    "const": "Organization"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                },
+                "location": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "address": {
+                            "$ref": "postal-address.schema.json"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "employmentType": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "FULL_TIME",
+                "PART_TIME",
+                "CONTRACT",
+                "INTERNSHIP",
+                "FREELANCE",
+                "TEMPORARY",
+                "APPRENTICESHIP",
+                "SEASONAL",
+                null
+            ]
+        },
+        "resumejson:workLocationType": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "remote",
+                "hybrid",
+                "office",
+                "unspecified",
+                null
+            ]
+        },
+        "resumejson:department": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resumejson:responsibilities": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": []
+        },
+        "resumejson:achievements": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": []
+        },
+        "keywords": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": []
+        }
+    },
+    "required": [
+        "@type",
+        "roleName",
+        "startDate",
+        "memberOf"
+    ]
+}

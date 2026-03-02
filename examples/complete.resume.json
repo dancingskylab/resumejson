@@ -1,0 +1,233 @@
+{
+    "@context": {
+        "@vocab": "https://schema.org/",
+        "resumejson": "https://auth.careers/schema/"
+    },
+    "@type": "CreativeWork",
+    "additionalType": "resumejson:StructuredResume",
+    "about": {
+        "@type": "Person",
+        "givenName": "Jane",
+        "familyName": "Doe",
+        "name": "Jane Doe",
+        "additionalName": "A.",
+        "honorificSuffix": "MBA",
+        "jobTitle": "Engineering Manager",
+        "description": "Experienced engineering leader with 12+ years building high-scale distributed systems.",
+        "image": "https://example.com/photos/jane.jpg"
+    },
+    "resumejson:address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+    },
+    "resumejson:contactPoints": [
+        {
+            "@type": "ContactPoint",
+            "contactType": "email",
+            "email": "jane.doe@example.com",
+            "resumejson:label": "Personal"
+        },
+        {
+            "@type": "ContactPoint",
+            "contactType": "phone",
+            "telephone": "+1-555-012-3456"
+        }
+    ],
+    "resumejson:socialProfiles": [
+        {
+            "@type": "resumejson:SocialProfile",
+            "resumejson:platform": "linkedin",
+            "url": "https://linkedin.com/in/janedoe",
+            "resumejson:username": "janedoe"
+        },
+        {
+            "@type": "resumejson:SocialProfile",
+            "resumejson:platform": "github",
+            "url": "https://github.com/janedoe"
+        }
+    ],
+    "resumejson:workExperience": [
+        {
+            "@type": "OrganizationRole",
+            "roleName": "Engineering Manager",
+            "startDate": "2022-01",
+            "memberOf": {
+                "@type": "Organization",
+                "name": "TechCo",
+                "url": "https://techco.example.com",
+                "location": {
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "San Francisco",
+                        "addressRegion": "CA"
+                    }
+                }
+            },
+            "employmentType": "FULL_TIME",
+            "resumejson:workLocationType": "hybrid",
+            "resumejson:responsibilities": [
+                "Led a team of 8 engineers across 3 product squads",
+                "Defined quarterly OKRs and sprint ceremonies"
+            ],
+            "resumejson:achievements": [
+                "Reduced deploy cycle time by 40% through CI/CD improvements"
+            ],
+            "keywords": [
+                "Leadership",
+                "Agile",
+                "CI/CD"
+            ]
+        },
+        {
+            "@type": "OrganizationRole",
+            "roleName": "Senior Software Engineer",
+            "startDate": "2018-06",
+            "endDate": "2021-12",
+            "memberOf": {
+                "@type": "Organization",
+                "name": "StartupX",
+                "url": "https://startupx.example.com"
+            },
+            "employmentType": "FULL_TIME",
+            "resumejson:responsibilities": [
+                "Designed event-driven microservices handling 50 k events/s"
+            ],
+            "keywords": [
+                "Go",
+                "Kafka",
+                "PostgreSQL"
+            ]
+        }
+    ],
+    "resumejson:education": [
+        {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "master",
+            "name": "Master of Business Administration",
+            "about": "Technology Management",
+            "recognizedBy": {
+                "@type": "Organization",
+                "name": "University of California, Berkeley"
+            },
+            "dateCreated": "2018-05"
+        },
+        {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "bachelor",
+            "name": "Bachelor of Science in Computer Science",
+            "recognizedBy": {
+                "@type": "Organization",
+                "name": "Stanford University"
+            },
+            "dateCreated": "2013-06",
+            "resumejson:gpa": "3.85",
+            "resumejson:honors": "Magna Cum Laude"
+        }
+    ],
+    "resumejson:skills": [
+        {
+            "@type": "DefinedTerm",
+            "name": "Go",
+            "termCode": "technical",
+            "resumejson:proficiencyLevel": "expert",
+            "resumejson:yearsOfExperience": 6
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Kubernetes",
+            "termCode": "platform",
+            "resumejson:proficiencyLevel": "advanced"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Team Leadership",
+            "termCode": "soft"
+        }
+    ],
+    "resumejson:certifications": [
+        {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "name": "AWS Solutions Architect – Professional",
+            "recognizedBy": {
+                "@type": "Organization",
+                "name": "Amazon Web Services"
+            },
+            "validFrom": "2023-01",
+            "resumejson:credentialId": "AWS-SAP-12345"
+        }
+    ],
+    "resumejson:projects": [
+        {
+            "@type": "CreativeWork",
+            "additionalType": "resumejson:Project",
+            "name": "OpenMetrics Dashboard",
+            "description": "Real-time observability dashboard for Prometheus metrics.",
+            "url": "https://github.com/janedoe/open-metrics-dash",
+            "resumejson:projectType": "open_source",
+            "keywords": [
+                "TypeScript",
+                "React",
+                "Prometheus"
+            ]
+        }
+    ],
+    "resumejson:volunteering": [
+        {
+            "@type": "OrganizationRole",
+            "additionalType": "VolunteerRole",
+            "roleName": "Mentor",
+            "startDate": "2020-09",
+            "memberOf": {
+                "@type": "Organization",
+                "name": "Code for America",
+                "resumejson:cause": "Civic technology"
+            },
+            "resumejson:responsibilities": [
+                "Mentored 5 junior developers through 12-week bootcamp"
+            ]
+        }
+    ],
+    "resumejson:awards": [
+        {
+            "@type": "resumejson:Award",
+            "name": "Hackathon Grand Prize",
+            "resumejson:awardedBy": {
+                "@type": "Organization",
+                "name": "TechCrunch Disrupt"
+            },
+            "resumejson:dateAwarded": "2019-09"
+        }
+    ],
+    "resumejson:languages": [
+        {
+            "@type": "resumejson:LanguageProficiency",
+            "resumejson:language": "English",
+            "resumejson:languageCode": "en",
+            "resumejson:proficiency": "native",
+            "resumejson:isNative": true
+        },
+        {
+            "@type": "resumejson:LanguageProficiency",
+            "resumejson:language": "Spanish",
+            "resumejson:languageCode": "es",
+            "resumejson:proficiency": "professional"
+        }
+    ],
+    "resumejson:publications": [
+        {
+            "@type": "ScholarlyArticle",
+            "headline": "Scaling Event-Driven Architectures at TechCo",
+            "datePublished": "2023-06",
+            "publisher": {
+                "@type": "Organization",
+                "name": "IEEE Software"
+            },
+            "url": "https://doi.org/10.1234/example",
+            "resumejson:publicationType": "journal_article",
+            "resumejson:doi": "10.1234/example"
+        }
+    ]
+}

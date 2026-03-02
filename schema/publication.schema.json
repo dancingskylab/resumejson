@@ -1,0 +1,91 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/publication.schema.json",
+    "title": "Publication",
+    "description": "A paper, article, blog post, or talk. Maps to Schema.org ScholarlyArticle.",
+    "$comment": "/// Required: [@type], [headline]. Optional: [publisher] (with [@type], [name], [url]), [datePublished], [resumejson:publicationType], [url], [resumejson:doi], [resumejson:coAuthors].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "ScholarlyArticle"
+        },
+        "headline": {
+            "type": "string"
+        },
+        "datePublished": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "publisher": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "@type": {
+                    "const": "Organization"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "url": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uri"
+        },
+        "resumejson:publicationType": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "journal_article",
+                "conference_paper",
+                "book_chapter",
+                "whitepaper",
+                "blog_post",
+                "patent",
+                "thesis",
+                "talk",
+                "poster",
+                "other",
+                null
+            ]
+        },
+        "resumejson:coAuthors": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "type": "string"
+            }
+        },
+        "resumejson:doi": {
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    },
+    "required": [
+        "@type",
+        "headline"
+    ]
+}

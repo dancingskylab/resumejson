@@ -1,0 +1,74 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/person-identity.schema.json",
+    "title": "PersonIdentity",
+    "description": "The resume owner's name, titles, and professional summary. Maps to Schema.org Person.",
+    "$comment": "/// Required: [@type], [givenName], [familyName], [name]. Optional: [additionalName], [honorificPrefix], [honorificSuffix], [jobTitle], [description], [image].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "Person"
+        },
+        "givenName": {
+            "type": "string",
+            "description": "First / given name."
+        },
+        "familyName": {
+            "type": "string",
+            "description": "Last / family / surname."
+        },
+        "name": {
+            "type": "string",
+            "description": "Full display name as it appears on the resume."
+        },
+        "additionalName": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Middle name or initial."
+        },
+        "honorificPrefix": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Title prefix (Dr., Mr., Ms., Prof., etc.)."
+        },
+        "honorificSuffix": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Title suffix (PhD, MBA, CPA, Jr., III, etc.)."
+        },
+        "jobTitle": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Current or target professional title."
+        },
+        "description": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Professional summary or objective statement."
+        },
+        "image": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uri",
+            "description": "URL to a headshot or profile photo."
+        }
+    },
+    "required": [
+        "@type",
+        "givenName",
+        "familyName",
+        "name"
+    ]
+}

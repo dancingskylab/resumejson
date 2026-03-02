@@ -1,0 +1,84 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/volunteering.schema.json",
+    "title": "Volunteering",
+    "description": "A single volunteer role. Maps to Schema.org OrganizationRole with additionalType VolunteerRole.",
+    "$comment": "/// Required: [@type], [additionalType], [roleName], [memberOf]. Optional: [startDate], [endDate], [description], [resumejson:responsibilities], [resumejson:achievements].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "OrganizationRole"
+        },
+        "additionalType": {
+            "const": "VolunteerRole"
+        },
+        "roleName": {
+            "type": "string"
+        },
+        "startDate": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "endDate": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "description": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "memberOf": {
+            "type": "object",
+            "properties": {
+                "@type": {
+                    "const": "Organization"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                },
+                "resumejson:cause": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "resumejson:responsibilities": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": []
+        },
+        "resumejson:achievements": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": []
+        }
+    },
+    "required": [
+        "@type",
+        "additionalType",
+        "roleName",
+        "memberOf"
+    ]
+}

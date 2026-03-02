@@ -1,0 +1,52 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/social-profile.schema.json",
+    "title": "SocialProfile",
+    "description": "A social media or professional profile link. Custom type resumejson:SocialProfile.",
+    "$comment": "/// Required: [@type], [resumejson:platform], [url]. Optional: [resumejson:username], [resumejson:displayText].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "resumejson:SocialProfile"
+        },
+        "resumejson:platform": {
+            "type": "string",
+            "enum": [
+                "linkedin",
+                "github",
+                "twitter",
+                "portfolio",
+                "stackoverflow",
+                "dribbble",
+                "behance",
+                "medium",
+                "youtube",
+                "kaggle",
+                "devto",
+                "personal_website",
+                "other"
+            ]
+        },
+        "url": {
+            "type": "string",
+            "format": "uri"
+        },
+        "resumejson:username": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resumejson:displayText": {
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    },
+    "required": [
+        "@type",
+        "resumejson:platform",
+        "url"
+    ]
+}

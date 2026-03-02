@@ -1,0 +1,62 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/contact-point.schema.json",
+    "title": "ContactPoint",
+    "description": "A single contact method (email, phone, fax, or website). Maps to Schema.org ContactPoint.",
+    "$comment": "/// Required: [@type], [contactType]. At least one of [email], [telephone], [faxNumber], or [url]. Optional: [resumejson:label].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "ContactPoint"
+        },
+        "contactType": {
+            "type": "string",
+            "enum": [
+                "email",
+                "phone",
+                "fax",
+                "website"
+            ]
+        },
+        "email": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Email address."
+        },
+        "telephone": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Phone number."
+        },
+        "faxNumber": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Fax number."
+        },
+        "url": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uri",
+            "description": "Website URL."
+        },
+        "resumejson:label": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Display label (e.g. 'Work Phone')."
+        }
+    },
+    "required": [
+        "@type",
+        "contactType"
+    ]
+}

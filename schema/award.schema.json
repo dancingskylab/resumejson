@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/award.schema.json",
+    "title": "Award",
+    "description": "A single award, honor, or recognition. Custom type resumejson:Award.",
+    "$comment": "/// Required: [@type], [name]. Optional: [awardedBy] (with [@type], [name], [url]), [resumejson:dateAwarded], [description].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "resumejson:Award"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resumejson:awardedBy": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "@type": {
+                    "const": "Organization"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "resumejson:dateAwarded": {
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    },
+    "required": [
+        "@type",
+        "name"
+    ]
+}

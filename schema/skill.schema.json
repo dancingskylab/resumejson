@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/skill.schema.json",
+    "title": "Skill",
+    "description": "A single skill entry. Maps to Schema.org DefinedTerm.",
+    "$comment": "/// Required: [@type], [name], [termCode]. Optional: [resumejson:proficiencyLevel], [resumejson:yearsOfExperience].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "DefinedTerm"
+        },
+        "name": {
+            "type": "string"
+        },
+        "termCode": {
+            "type": "string",
+            "enum": [
+                "technical",
+                "soft",
+                "language",
+                "tool",
+                "framework",
+                "methodology",
+                "domain",
+                "platform",
+                "database",
+                "cloud",
+                "other"
+            ]
+        },
+        "resumejson:proficiencyLevel": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "beginner",
+                "intermediate",
+                "advanced",
+                "expert",
+                null
+            ]
+        },
+        "resumejson:yearsOfExperience": {
+            "type": [
+                "number",
+                "null"
+            ]
+        }
+    },
+    "required": [
+        "@type",
+        "name",
+        "termCode"
+    ]
+}

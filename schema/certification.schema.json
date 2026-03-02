@@ -1,0 +1,71 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/certification.schema.json",
+    "title": "Certification",
+    "description": "A professional certification or license. Maps to Schema.org EducationalOccupationalCredential.",
+    "$comment": "/// Required: [@type], [credentialCategory], [name], [recognizedBy]. Optional: [validFrom], [validThrough], [resumejson:credentialId], [resumejson:verificationUrl].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "EducationalOccupationalCredential"
+        },
+        "credentialCategory": {
+            "const": "certification"
+        },
+        "name": {
+            "type": "string"
+        },
+        "recognizedBy": {
+            "type": "object",
+            "properties": {
+                "@type": {
+                    "const": "Organization"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "validFrom": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "validThrough": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resumejson:credentialId": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "resumejson:verificationUrl": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uri"
+        }
+    },
+    "required": [
+        "@type",
+        "credentialCategory",
+        "name",
+        "recognizedBy"
+    ]
+}

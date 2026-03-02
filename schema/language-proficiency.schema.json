@@ -1,0 +1,51 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://auth.careers/schema/language-proficiency.schema.json",
+    "title": "LanguageProficiency",
+    "description": "A single spoken/written language with proficiency level. Custom type resumejson:LanguageProficiency.",
+    "$comment": "/// Required: [@type], [resumejson:language], [resumejson:proficiency]. Optional: [resumejson:languageCode], [resumejson:isNative], [resumejson:certifications].",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "resumejson:LanguageProficiency"
+        },
+        "resumejson:language": {
+            "type": "string"
+        },
+        "resumejson:languageCode": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "ISO 639-1 two-letter code."
+        },
+        "resumejson:proficiency": {
+            "type": "string",
+            "enum": [
+                "native",
+                "fluent",
+                "professional",
+                "intermediate",
+                "basic"
+            ]
+        },
+        "resumejson:isNative": {
+            "type": "boolean",
+            "default": false
+        },
+        "resumejson:certifications": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "@type",
+        "resumejson:language",
+        "resumejson:proficiency"
+    ]
+}
